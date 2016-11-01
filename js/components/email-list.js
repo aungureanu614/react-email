@@ -2,6 +2,7 @@ var React = require('react');
 var Email = require('./email');
 
 var EmailList = function(props) {
+  console.log(props); // This is becoming undefined upon clicking the email.
     var emails = Object.keys(props.emails).map(function(emailId, index) {
         var email = props.emails[emailId];
         return (
