@@ -5,7 +5,7 @@ var Link = router.Link;
 var Email = function(props) {
     return (
         <div>
-                {props.emails.content}
+            {props.emails.content}
             
         </div>
     );

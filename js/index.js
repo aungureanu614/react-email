@@ -15,11 +15,14 @@ var IndexRoute = router.IndexRoute;
 var routes = (
      <Router history={hashHistory}>
      	<Route path={"/"} component={App}>
-     		
-     		<Route path={":mailbox_name"} component={MailboxListContainer}>
-     			<Route path={":emailId"} component={EmailContainer}/>
-     		</Route> 
-     	</Route>
+
+               <Route path={":mailbox_name"} >
+          <IndexRoute component={MailboxListContainer}/>
+                    <Route path={":emailId"} >
+            <IndexRoute component={EmailContainer}/>
+          </Route>
+               </Route>
+          </Route>
      	    
      </Router>
 );
