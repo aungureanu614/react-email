@@ -5,19 +5,23 @@ var Router = router.Router;
 var Route = router.Route;
 var hashHistory = router.hashHistory;
 var App = require('./components/app');
-var ContactContainer = require('./components/contact-container');
 
-var ContactListContainer = require('./components/contact-list-container');
+
+var MailboxListContainer = require('./components/mailbox-list-container');
+var EmailContainer = require('./components/email-container');
 
 var IndexRoute = router.IndexRoute;
 
 var routes = (
-    <Router history={hashHistory}>
-        <Route path="/contacts" component={App}>
-            <IndexRoute component={ContactListContainer} />
-            <Route path=":contactId" component={ContactContainer}/>
-        </Route>
-    </Router>
+     <Router history={hashHistory}>
+     	<Route path={"/"} component={App}>
+     		
+     		<Route path={":mailbox_name"} component={MailboxListContainer}>
+     			<Route path={":emailId"} component={EmailContainer}/>
+     		</Route> 
+     	</Route>
+     	    
+     </Router>
 );
 
 document.addEventListener('DOMContentLoaded', function() {

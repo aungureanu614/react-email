@@ -2,18 +2,21 @@ var React = require('react');
 var router = require('react-router');
 var Link = router.Link;
 
-var Contact = function(props) {
+var Email = function(props) {
     return (
         <div>
             <strong>
-                <Link to={'/contacts/' + props.id}>
-                	{props.name}
+                <span>From: {props.from} </span>
+                <span> Title: </span>
+                <Link to={props.id}>
+                	{props.title}
                 </Link>
+
             </strong>
             &nbsp;
-            {props.phoneNumber}
+          
         </div>
     );
 };
 
-module.exports = Contact;
+module.exports = Email;
